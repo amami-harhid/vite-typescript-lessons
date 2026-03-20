@@ -1,0 +1,15 @@
+/**
+ * 【03-02】掛算、割算
+ */
+import { console } from '~/console';
+
+// 数値を * や / を使って計算させましょう。
+// 15 * 3
+// 100 / 2
+
+const n15 = 15;
+const n3 = 3;
+const n100 = 100;
+const n4 = 4;
+console.log(n15 * n3);  // 15 × 3 => 45 
+console.log(n100 / n4); // 100 ÷ 4 => 25

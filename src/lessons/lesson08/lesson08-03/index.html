@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:,">
+    <style>
+      .container {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height:100vh;
+      }
+      #rensyu {
+        font-size: 800%;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+      }
+      .half_ghost {
+        opacity: 0.5;
+      }
+      .ghost {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="rensyu">ボタン</button>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>

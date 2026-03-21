@@ -1,1 +1,1 @@
-# Canvasへ線を描画、画像を描画
+# Canvasへ線を描画、画像を描画 ( WEBGL / excalibur )

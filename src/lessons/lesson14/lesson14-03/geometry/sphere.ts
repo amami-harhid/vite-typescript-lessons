@@ -1,0 +1,13 @@
+import * as Three from '@nm/three/build/three.webgpu';
+import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+
+/** 球体を作成 */ 
+export const createShpere = ():THREE.Mesh => {
+    const radius = 250;
+    const widthSegments = 2;
+    const heightSegments = 30;
+    const geometry: THREE.SphereGeometry = new Three.SphereGeometry(radius, widthSegments, heightSegments);
+    const material: THREE.MeshStandardMaterial = new Three.MeshStandardMaterial({color: 0xffffff});
+    const _shpere: THREE.Mesh = new Three.Mesh(geometry, material);
+    return _shpere;
+}

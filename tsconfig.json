@@ -11,7 +11,8 @@
       "baseUrl": "./",
       "paths": {
         "~/*": ["./src/utils/*"],
-        "assets/*": ["./assets/*"]
+        "assets/*": ["./assets/*"],
+        "@nm/*": ["./node_modules/*"],
       },
       /* Bundler mode */
       "moduleResolution": "node",

@@ -60,6 +60,7 @@ export default defineConfig({
         alias: {
             "~": resolve(__dirname, "src/utils"),
             "assets": resolve(__dirname, "assets"),
+            "@nm" : resolve(__dirname, "node_modules"),
         }
     },
 

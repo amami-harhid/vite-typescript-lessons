@@ -1,6 +1,6 @@
 /**
- * 【15-02】Three.js(WEBGPU) / 基本編
- *  ライト
+ * 【15-03】Three.js(WEBGPU) / 基本編
+ *  Shadow(影)
  *  https://ics.media/tutorial-three/light_variation/
  */
 import * as Three from '@nm/three/build/three.webgpu';
@@ -24,6 +24,8 @@ const renderer: THREE.WebGPURenderer = new Three.WebGPURenderer({
 });
 renderer.setPixelRatio(devicePixelRatio);
 renderer.setSize(width, height);
+// レンダラー：シャドウを有効にする
+renderer.shadowMap.enabled = true;
 
 // シーンを作成
 const scene: THREE.Scene = new Three.Scene();
@@ -67,7 +69,7 @@ function tick() {
 		const nextLight = lightArray[lightIdx%(lightArray.length)];
 		scene.remove(light);
 		scene.add(nextLight);
-		scene.add(lightArray[0]);
+		//scene.add(lightArray[0]);
 		light = nextLight;
 	}
 	// 照明の位置を更新
@@ -75,7 +77,7 @@ function tick() {
     const r = 20.0;
     const lx = r * Math.cos(t);
     const lz = r * Math.sin(t);
-    const ly = 6.0 + 5.0 * Math.sin(t / 3.0);
+    const ly = 15.0 + 5.0 * Math.sin(t / 3.0);
     light.position.set(lx, ly, lz);
 
 	// 物体を回転

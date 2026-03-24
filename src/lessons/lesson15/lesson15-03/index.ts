@@ -69,7 +69,7 @@ function tick() {
 		const nextLight = lightArray[lightIdx%(lightArray.length)];
 		scene.remove(light);
 		scene.add(nextLight);
-		//scene.add(lightArray[0]);
+//		scene.add(lightArray[4]);
 		light = nextLight;
 	}
 	// 照明の位置を更新
@@ -77,7 +77,7 @@ function tick() {
     const r = 20.0;
     const lx = r * Math.cos(t);
     const lz = r * Math.sin(t);
-    const ly = 15.0 + 5.0 * Math.sin(t / 3.0);
+    const ly = 25.0 + 5.0 * Math.sin(t / 3.0);
     light.position.set(lx, ly, lz);
 
 	// 物体を回転

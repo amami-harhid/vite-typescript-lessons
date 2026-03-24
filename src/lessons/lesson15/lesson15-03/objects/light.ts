@@ -32,8 +32,8 @@ export const hemisphereLight = () :THREE.HemisphereLight => {
 /** 点光源 */
 export const pointLight = () :THREE.PointLight => {
     const color = 0x00FF00; // 光の色
-    const intensity = 30; // 光の強さ
-    const distance = 50; // 距離
+    const intensity = 130; // 光の強さ
+    const distance = 150; // 距離
     const decay = 0.5; // 光の減衰率
     const light: THREE.PointLight = new Three.PointLight(color, intensity, distance, decay);
     // ライトに影を有効にする
@@ -42,12 +42,12 @@ export const pointLight = () :THREE.PointLight => {
 }
 /** スポットライト光源 */
 export const spotLight = () : THREE.SpotLight => {
-    const color = 0xff0000;
-    const intensity = 10; // 光の強さ
+    const color = 0xff00ff;
+    const intensity = 50; // 光の強さ
     const distance = 100; // 距離
-    const angle = Math.PI / 2; // 照射角
-    const penumbra = 0.1; // ボケ具合
-    const decay = 0.5; // 光の減衰率
+    const angle = Math.PI / 4; // 照射角
+    const penumbra = 0; // ボケ具合
+    const decay = 0; // 光の減衰率
     const light: THREE.SpotLight = new Three.SpotLight(color, intensity, distance, angle, penumbra, decay);
     // ライトに影を有効にする
     light.castShadow = true;
@@ -61,10 +61,10 @@ export const rectAreaLight = (): THREE.RectAreaLight => {
     Three.RectAreaLightNode.setLTC(ltc);
     
 
-    const color = 0xff0000;
+    const color = 0xf0f0f0;
     const intensity = 30; // 光の強さ
-    const width = 20; // 幅
-    const height = 20; // 高さ
+    const width = 50; // 幅
+    const height = 50; // 高さ
     const light: THREE.RectAreaLight = new Three.RectAreaLight(color, intensity, width, height);
     // ライトに影を有効にする
     light.castShadow = true;

@@ -1,15 +1,15 @@
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 
 /** トーラスを作成(MeshNormal) */ 
-export const createTorusMeshNormal = ():THREE.Mesh => {
+export const createTorusMeshNormal = ():Three.Mesh => {
     const radius = 200;
     const tube = 50;
     const height = 32;
     const radialSegments = 100;
-    const geometry: THREE.TorusGeometry = new Three.TorusGeometry(radius, tube, height, radialSegments);
+    const geometry: Three.TorusGeometry = new THREE.TorusGeometry(radius, tube, height, radialSegments);
     // MeshNormalMaterial
-    const material: THREE.MeshNormalMaterial = new Three.MeshNormalMaterial();
-    const _torus: THREE.Mesh = new Three.Mesh(geometry, material);
+    const material: Three.MeshNormalMaterial = new THREE.MeshNormalMaterial();
+    const _torus: Three.Mesh = new THREE.Mesh(geometry, material);
     return _torus;
 }

@@ -3,8 +3,8 @@
  *  Shadow(影)
  *  https://ics.media/tutorial-three/light_variation/
  */
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 import * as CANVAS from './canvas';
 import { meshFloor } from './objects/meshFloor';
 import { meshObject } from './objects/meshObject';
@@ -19,7 +19,7 @@ const height = 540;
 const canvas = CANVAS.createCanvas();
 
 // レンダラーを作成
-const renderer: THREE.WebGPURenderer = new Three.WebGPURenderer({
+const renderer: Three.WebGPURenderer = new THREE.WebGPURenderer({
 	canvas: canvas,
 });
 renderer.setPixelRatio(devicePixelRatio);
@@ -28,8 +28,8 @@ renderer.setSize(width, height);
 renderer.shadowMap.enabled = true;
 
 // シーンを作成
-const scene: THREE.Scene = new Three.Scene();
-scene.background = new Three.Color(0x000000);
+const scene: Three.Scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
 
 // カメラを作成
 const camera = perspectiveCamera(width, height);
@@ -43,7 +43,7 @@ const object = meshObject();
 scene.add(object);
 
 // 光
-const lightArray: THREE.Light[] = [];
+const lightArray: Three.Light[] = [];
 lightArray.push(ambientLight());
 lightArray.push(directionalLight());
 lightArray.push(hemisphereLight());

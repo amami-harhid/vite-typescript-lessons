@@ -1,10 +1,10 @@
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 
-export const perspectiveCamera = (width:number , height:number): THREE.PerspectiveCamera => {
+export const perspectiveCamera = (width:number , height:number): Three.PerspectiveCamera => {
 
-    const camera: THREE.PerspectiveCamera = new Three.PerspectiveCamera(45, width / height);
+    const camera: Three.PerspectiveCamera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set(100, 80, 100);
-    camera.lookAt(new Three.Vector3(0, 0, 0));
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
     return camera;
 }

@@ -4,14 +4,10 @@
  *  「球体」や「直方体」、「平面」などさまざまな3Dのオブジェクトを表示する
  *  https://ics.media/tutorial-three/geometry_general/
  */
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 import * as CANVAS from './canvas';
 import { createShpere } from './geometry/sphere';
-//import { createBox } from './geometry/box';
-//import { createPlane } from './geometry/plane';
-//import { createCone } from './geometry/cone';
-//import { createCylinder } from './geometry/cylinder';
 import { createTorus } from './geometry/torus';
 
 // レンダーサイズを指定
@@ -21,33 +17,33 @@ const height = 840;
 const canvas = CANVAS.createCanvas();
 
 // レンダラーを作成
-const renderer: THREE.WebGPURenderer = new Three.WebGPURenderer({
+const renderer: Three.WebGPURenderer = new THREE.WebGPURenderer({
 	canvas: canvas,
 });
 renderer.setPixelRatio(devicePixelRatio);
 renderer.setSize(width, height);
 
 // シーンを作成
-const scene: THREE.Scene = new Three.Scene();
-scene.background = new Three.Color(0xe0e0e0);
+const scene: Three.Scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe0e0e0);
 
 // カメラを作成
-const camera: THREE.PerspectiveCamera = new Three.PerspectiveCamera(45, width / height, 1, 10000);
+const camera: Three.PerspectiveCamera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
 camera.position.set(0, 0, +1000);
 
 // 球体を作成
-const sphere: THREE.Mesh = createShpere();
+const sphere: Three.Mesh = createShpere();
 sphere.position.set( -200, 0, 0);
 // シーンに追加
 scene.add(sphere);
 
 // トーラス
-const torus : THREE.Mesh = createTorus();
+const torus : Three.Mesh = createTorus();
 torus.position.set( 200, 0, 100);
 scene.add(torus);
 
 // 平行光源
-const directionalLight: THREE.DirectionalLight = new Three.DirectionalLight(0x00ff00);
+const directionalLight: Three.DirectionalLight = new THREE.DirectionalLight(0x00ff00);
 directionalLight.position.set(1, 1, 1);
 // シーンに追加
 scene.add(directionalLight);

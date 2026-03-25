@@ -1,5 +1,5 @@
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 
 /** 星屑を作成します */
 export const createStarField = () => {
@@ -15,17 +15,17 @@ export const createStarField = () => {
 
 
     // 形状データを作成
-    const geometry = new Three.BufferGeometry();
-    geometry.setAttribute("position", new Three.Float32BufferAttribute(vertices, 3));
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
 
     // マテリアルを作成
-    const material:THREE.PointsMaterial = new Three.PointsMaterial({
+    const material:Three.PointsMaterial = new THREE.PointsMaterial({
         size: 10,
         color: 0xffffff,
     });
 
     // 物体を作成
-    const mesh:THREE.Points = new Three.Points(geometry, material);
+    const mesh:Three.Points = new THREE.Points(geometry, material);
 
     return mesh;
 }

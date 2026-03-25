@@ -3,8 +3,8 @@
  *  Camera(PerspectiveCamera/OrthographicCamera)
  *  https://ics.media/tutorial-three/camera_variation/
  */
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 import * as CANVAS from './canvas';
 import { meshFloor } from './objects/meshFloor';
 import { meshObjects } from './objects/meshObject';
@@ -19,7 +19,7 @@ const height = 540;
 const canvas = CANVAS.createCanvas();
 
 // レンダラーを作成
-const renderer: THREE.WebGPURenderer = new Three.WebGPURenderer({
+const renderer: Three.WebGPURenderer = new THREE.WebGPURenderer({
 	canvas: canvas,
 });
 renderer.setPixelRatio(devicePixelRatio);
@@ -28,11 +28,11 @@ renderer.setSize(width, height);
 renderer.shadowMap.enabled = true;
 
 // シーンを作成
-const scene: THREE.Scene = new Three.Scene();
-scene.background = new Three.Color(0x000000);
+const scene: Three.Scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
 
 // カメラを作成
-const cameraArray : THREE.Camera[] = [];
+const cameraArray : Three.Camera[] = [];
 const _perspectiveCamera = perspectiveCamera(width, height);
 cameraArray.push(_perspectiveCamera);
 const _orthographicCamera = orthographicCamera(width,height);
@@ -43,7 +43,7 @@ const floor = meshFloor();
 scene.add(floor);
 
 // 物体を作成
-const objects:THREE.Mesh[] = meshObjects();
+const objects:Three.Mesh[] = meshObjects();
 for(const _mesh of objects){
 	scene.add(_mesh);
 }
@@ -71,7 +71,7 @@ function tick() {
 	camera.position.y = 250;
 	camera.position.z = 500 * Math.cos(Date.now() / 2000);
 	// 原点方向を見つめる
-	camera.lookAt(new Three.Vector3(0, 0, 0));
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 	renderer.render(scene, camera); // レンダリング
 }

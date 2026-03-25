@@ -3,8 +3,8 @@
  *  Fog ( 遠くの物体が霞む効果 )
  *  https://ics.media/tutorial-three/camera_variation/
  */
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 import * as CANVAS from './canvas';
 import { meshObjects } from './objects/meshObjects';
 import { directionalLight, ambientLight } from './objects/light';
@@ -18,7 +18,7 @@ const height = 540;
 const canvas = CANVAS.createCanvas();
 
 // レンダラーを作成
-const renderer: THREE.WebGPURenderer = new Three.WebGPURenderer({
+const renderer: Three.WebGPURenderer = new THREE.WebGPURenderer({
 	canvas: canvas,
 	antialias: true,
 	devicePixelRatio: devicePixelRatio,
@@ -26,8 +26,8 @@ const renderer: THREE.WebGPURenderer = new Three.WebGPURenderer({
 renderer.setSize(width, height);
 
 // シーンを作成
-const scene: THREE.Scene = new Three.Scene();
-scene.background = new Three.Color(0x000000);
+const scene: Three.Scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
 
 scene.fog = fog();
 
@@ -36,11 +36,11 @@ scene.fog = fog();
 const camera = perspectiveCamera(width, height);
 
 // グループを作成
-const group: THREE.Group = new Three.Group();
+const group: Three.Group = new THREE.Group();
 scene.add(group);
 
 // 物体を作成
-const objects:THREE.Mesh[] = meshObjects();
+const objects:Three.Mesh[] = meshObjects();
 for(const _mesh of objects){
 	group.add(_mesh);
 }
@@ -52,17 +52,20 @@ scene.add(ambientLight());
 const rotationX : number[] = [];
 const rotationY : number[] = [];
 for(let _ in group.children){
-	rotationX.push(Math.random()/20);
-	rotationY.push(Math.random()/20);
+	rotationX.push(Math.random()/10);
+	rotationY.push(Math.random()/10);
 }
 
 
 // 毎フレーム時に実行されるループイベントです
 renderer.setAnimationLoop(tick);
+let time = 0;
 function tick() {
-	//group.rotateX(0.01);
-	//group.rotateY(0.01);
-	group.rotateZ(0.01);
+	time += 1;
+	time = time % 500;
+	group.rotateX((time>150)?0.01:-0.01); // X軸の回転(group全体)
+	group.rotateY((time>250)?0.01:-0.01); // Y軸の回転(group全体)
+	group.rotateZ((time>350)?0.01:-0.01); // Z軸の回転(group全体)
 	for(const idx in group.children){
 		const mesh = group.children[idx];
 		mesh.rotation.x -= rotationX[idx];

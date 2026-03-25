@@ -1,17 +1,17 @@
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 import CheckerdPattern from 'assets/checerd.png';
 
-export const meshFloor = (): THREE.Mesh => {
+export const meshFloor = (): Three.Mesh => {
 
-    const loader:THREE.TextureLoader = new Three.TextureLoader()
-    const texture:THREE.Texture = loader.load( CheckerdPattern );
-    texture.colorSpace = Three.SRGBColorSpace; // カラースペースを指定
+    const loader:Three.TextureLoader = new THREE.TextureLoader()
+    const texture:Three.Texture = loader.load( CheckerdPattern );
+    texture.colorSpace = THREE.SRGBColorSpace; // カラースペースを指定
 
 
-    const floor = new Three.Mesh(
-        new Three.BoxGeometry(4000, 0.1, 4000),
-        new Three.MeshStandardMaterial({ 
+    const floor = new THREE.Mesh(
+        new THREE.BoxGeometry(4000, 0.1, 4000),
+        new THREE.MeshStandardMaterial({ 
             //map: texture,
             color: 0xf0f0f0, 
             roughness: 0.2 

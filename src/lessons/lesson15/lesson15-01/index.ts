@@ -3,8 +3,8 @@
  *  マテリアル　MeshBasicMaterial
  *  https://ics.media/tutorial-three/material_variation/
  */
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 import * as CANVAS from './canvas';
 import { createTorusMeshBasic } from './geometry/torusMeshBasic';
 import { createTorusMeshNormal } from './geometry/torusMeshNormal';
@@ -21,34 +21,34 @@ const height = 540;
 const canvas = CANVAS.createCanvas();
 
 // レンダラーを作成
-const renderer: THREE.WebGPURenderer = new Three.WebGPURenderer({
+const renderer: Three.WebGPURenderer = new THREE.WebGPURenderer({
 	canvas: canvas,
 });
 renderer.setPixelRatio(devicePixelRatio);
 renderer.setSize(width, height);
 
 // シーンを作成
-const scene: THREE.Scene = new Three.Scene();
-scene.background = new Three.Color(0x303030);
+const scene: Three.Scene = new THREE.Scene();
+scene.background = new THREE.Color(0x303030);
 
 // カメラを作成
-const camera: THREE.PerspectiveCamera = new Three.PerspectiveCamera(45, width / height);
+const camera: Three.PerspectiveCamera = new THREE.PerspectiveCamera(45, width / height);
 camera.position.set(0, 0, +1000);
 
 // 平行光源
-const directionalLight:THREE.DirectionalLight = new Three.DirectionalLight(0xffffff);
+const directionalLight:Three.DirectionalLight = new THREE.DirectionalLight(0xffffff);
 directionalLight.position.set(-350, 100, 100);
 directionalLight.lookAt(0,0,0);
 scene.add(directionalLight);
 
 // ポイント光源
-const pointLight:THREE.PointLight = new Three.PointLight(0xffffff, 2, 1000);
+const pointLight:Three.PointLight = new THREE.PointLight(0xffffff, 2, 1000);
 pointLight.position.set( -350, 350, 350 );
 scene.add(pointLight);
-const pointLightHelper:THREE.PointLightHelper = new Three.PointLightHelper(pointLight, 30);
+const pointLightHelper:Three.PointLightHelper = new THREE.PointLightHelper(pointLight, 30);
 scene.add(pointLightHelper);
 
-const meshArray:THREE.Mesh[] = []
+const meshArray:Three.Mesh[] = []
 // Torusを作成
 const torusMeshBasic = createTorusMeshBasic();
 meshArray.push(torusMeshBasic);
@@ -104,7 +104,7 @@ function tick() {
 	camera.position.x = 1000 * Math.sin(radian);
 	camera.position.z = 1000 * Math.cos(radian);	
 	// 原点方向を見つめる
-	camera.lookAt(new Three.Vector3(0, 0, 0));
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
 	// 回転
 	rot_x -= 0.01;
 	rot_y -= 0.01;

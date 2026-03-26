@@ -30,7 +30,9 @@
   "dependencies": {
     "excalibur": "^0.32.0",
     "gl-matrix": "^3.4.4",
+    "gsap": "^3.14.2",
     "three": "^0.183.2",
-    "vite": "^6.2.3"
+    "vite": "^6.2.3",
+    "webfontloader": "^1.6.28"
   }
 }

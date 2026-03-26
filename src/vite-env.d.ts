@@ -5,3 +5,5 @@ module "virtual:terminal"
 module "~/console/logger"
 module "mat4";
 module "@nm/three/build/three.webgpu"
+module "three/tsl"
+module "webfontloader"

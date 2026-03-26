@@ -1,14 +1,14 @@
-import * as Three from '@nm/three/build/three.webgpu';
-import type * as THREE from '@nm/@types/three/src/Three.WebGPU';
+import * as THREE from '@nm/three/build/three.webgpu';
+import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 
-export const meshObjects = (): THREE.Mesh[] => {
+export const meshObjects = (): Three.Mesh[] => {
 
     // 立方体のマテリアルとジオメトリを作成
-    const geometry = new Three.BoxGeometry(50, 50, 50);
-    const material = new Three.MeshStandardMaterial();
-    const boxes : THREE.Mesh[] = []
+    const geometry = new THREE.BoxGeometry(50, 50, 50);
+    const material = new THREE.MeshStandardMaterial();
+    const boxes : Three.Mesh[] = []
     for (let i = 0; i < 500; i++) {
-        const mesh = new Three.Mesh(geometry, material);
+        const mesh = new THREE.Mesh(geometry, material);
         mesh.position.x = (Math.random() - 0.5) * 2000;
         mesh.position.y = (Math.random() - 0.5) * 2000;
         mesh.position.z = (Math.random() - 0.5) * 2000;

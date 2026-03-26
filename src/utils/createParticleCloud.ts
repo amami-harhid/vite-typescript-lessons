@@ -12,7 +12,7 @@ export function createParticleCloud(): Three.InstancedMesh {
   const positions: { x: number; y: number; z: number }[] = [];
   const scales: number[] = [];
   const colors: number[] = [];
-  const particleColor = new THREE.Color(0xffffff);
+  const particleColor = new THREE.Color(0x0f0f0f);
 
   for (let i = 0; i < numParticles; i++) {
     positions.push({

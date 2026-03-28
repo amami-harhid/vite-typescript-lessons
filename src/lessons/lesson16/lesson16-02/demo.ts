@@ -1,10 +1,10 @@
 import * as THREE from '@nm/three/build/three.webgpu';
 import type * as Three from '@nm/@types/three/src/Three.WebGPU';
 import gsap, { Cubic, Quart } from "gsap";
-import { createCanvas } from '~/createCanvas';
-import { createParticleCloud } from '~/createParticleCloud';
+import { createCanvas } from '../createCanvas';
+import { createParticleCloud } from '../createParticleCloud';
 import { IconsView } from "../iconsView";
-import { FONT_ICON } from "~/loadFonts";
+import { FONT_ICON } from "../loadFonts";
 
 /**
  * 3Dのパーティクル表現のクラスです。

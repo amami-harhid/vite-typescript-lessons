@@ -1,8 +1,10 @@
 /**
  * 【18-02】Three.js(WEBGPU) / 2D Game Sample
+ *  WebGLRenderer を利用。
+ * 	タイプした文字を表示する。
+ *  Backspace で入力を取り消し。
  * https://github.com/mrdoob/three.js/blob/master/examples/webgl_geometry_text.html	
  */
-//import * as THREE from '@nm/three/build/three.webgpu';
 import * as THREE from 'three';
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min';
 //import type * as Three from '@nm/@types/three/src/Three.WebGPU';

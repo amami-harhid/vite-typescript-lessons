@@ -3,10 +3,12 @@
  */
  {
     "compilerOptions": {
+      "ignoreDeprecations":"6.0",
       "target": "esnext",
       "useDefineForClassFields": true,
       "module": "esnext",
       "lib": ["esnext", "DOM", "DOM.Iterable"],
+      "types": ["node"],
       "skipLibCheck": true,
       "baseUrl": "./",
       "paths": {

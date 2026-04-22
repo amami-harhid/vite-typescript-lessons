@@ -1,3 +1,3 @@
 # 関数
 
-npx tsx ./src/lesson05/lesson05-x
+npx tsx ./src/lessons/lesson05/lesson05-x/index.ts

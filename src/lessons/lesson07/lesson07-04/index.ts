@@ -4,12 +4,15 @@
  */
 import { wait } from "~/timer";
 
+// querySelector + innerText を使うとき
+type DIVELEMENT = HTMLDivElement | null;
+
 /** DIVの中身を書き換える */
 const kakikaeru = (name:string) => {
     // IDの場合、# をつける
-    const rensyu = document.querySelector('#rensyu');
-    if(rensyu){
-        rensyu.innerHTML = `こんにちは、${name}さん`;
+    const rensyu: DIVELEMENT = document.querySelector('#rensyu');
+    if(rensyu){ // undefined or null のときには処理しない
+        rensyu.innerText = `こんにちは、${name}さん`;
     }
 }
 

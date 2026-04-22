@@ -1,7 +1,8 @@
 /**
  * 【06-06】配列と繰り返し  ( for..in )
+ *  for..in で indexを取り出します( 要素ではありません )
+ *  for..of と似ているので間違えないようにしましょう。
  */
-import {console} from "~/console";
 
 /** 配列 */
 const hairetsu = []; // 空の配列を作ります。
@@ -13,6 +14,6 @@ hairetsu.push('004');
 
 // for..in で要素のIDXを順番に取得
 for(const idx in hairetsu){
-    const elem = hairetsu[idx];
+    const elem = hairetsu[idx]; // 要素が欲しいときは配列から取り出す必要があります。
     console.log(`IDX=${idx}, ELEM=${elem}`);
 }

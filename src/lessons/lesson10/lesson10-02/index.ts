@@ -1,7 +1,7 @@
 /**
  * 【10-02】キーボード検知
  * 
- *  キーが押された（そのキー）、キーが離された
+ *  キーが押された、キーが離された
  */
 const keyPress = document.querySelector('#keypress');
 

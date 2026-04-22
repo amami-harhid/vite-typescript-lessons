@@ -60,6 +60,7 @@ let lightIdx = 0;
 canvas.addEventListener('click', ()=>{
 	changer = true;
 	lightIdx += 1;
+	console.log(`lightIdx=${lightIdx}`);
 })
 
 // 毎フレーム時に実行されるループイベントです

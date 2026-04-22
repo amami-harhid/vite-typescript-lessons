@@ -7,7 +7,7 @@ import { wait } from "~/timer";
 const kakikaeru = (name:string) => {
     const rensyu = document.getElementById('rensyu');
     if(rensyu){
-        rensyu.innerHTML = `こんにちは、${name}さん`;
+        rensyu.innerText = `こんにちは、${name}さん`;
     }
 }
 
